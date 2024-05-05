@@ -1,0 +1,8 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+    org.springframework.ws.client.MessageTracing.sent: DEBUG
+    org.springframework.ws.server.MessageTracing.sent: DEBUG
+    org.springframework.ws.client.MessageTracing.received: TRACE
+    org.springframework.ws.server.MessageTracing.received: TRACE

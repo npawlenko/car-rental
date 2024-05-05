@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8080/services/car"
+           xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+           targetNamespace="http://localhost:8080/services/car"
+           elementFormDefault="qualified">
+
+    <xs:element name="findByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:CarDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findAllRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="findAllResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="list" type="tns:CarDto" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:CarDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:CarDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="dto" type="tns:CarDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:CarDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="CarDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="model" type="tns:CarModel"/>
+            <xs:element name="transmission" type="tns:Transmission"/>
+            <xs:element name="color" type="xs:string"/>
+            <xs:element name="mileage" type="xs:int"/>
+            <xs:element name="yearOfProduction" type="xs:int"/>
+            <xs:element name="fuel" type="tns:Fuel"/>
+            <xs:element name="secondaryFuel" type="tns:Fuel" minOccurs="0"/>
+            <xs:element name="drive" type="tns:Drive"/>
+            <xs:element name="airConditioning" type="xs:boolean"/>
+            <xs:element name="pricePerHour" type="xs:float"/>
+            <xs:element name="picture" type="xs:base64Binary" xmime:expectedContentTypes="image/*"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="CarModel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SEDAN"/>
+            <xs:enumeration value="SUV"/>
+            <xs:enumeration value="HATCHBACK"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Transmission">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MANUAL"/>
+            <xs:enumeration value="AUTOMATIC"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Fuel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GAS"/>
+            <xs:enumeration value="DIESEL"/>
+            <xs:enumeration value="LPG"/>
+            <xs:enumeration value="ELECTRIC"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Drive">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FWD"/>
+            <xs:enumeration value="RWD"/>
+            <xs:enumeration value="AWD"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

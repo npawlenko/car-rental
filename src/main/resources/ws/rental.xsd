@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8080/services/rental"
+           targetNamespace="http://localhost:8080/services/rental"
+           elementFormDefault="qualified">
+
+    <xs:element name="findByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:RentalDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findAllRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="findAllResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="list" type="tns:RentalDto" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:RentalDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:RentalDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="dto" type="tns:RentalDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dto" type="tns:RentalDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="RentalDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="dateFrom" type="xs:dateTime"/>
+            <xs:element name="dateTo" type="xs:dateTime"/>
+            <xs:element name="car" type="tns:DictionaryDto"/>
+            <xs:element name="user" type="tns:DictionaryDto"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DictionaryDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

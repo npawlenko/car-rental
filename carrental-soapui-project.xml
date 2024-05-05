@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f3ce137b-a5d4-4921-9434-1bd4039b975a" activeEnvironment="Default" name="client" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="94f0bbbb-b997-4a75-8ad8-ad387b529668" wsaVersion="NONE" name="ClientPortSoap11" type="wsdl" bindingName="{http://localhost:8080/services/client}ClientPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/blink/Downloads/client.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\blink\Downloads\client.wsdl"><con:part><con:url>file:\C:\Users\blink\Downloads\client.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://localhost:8080/services/client" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://localhost:8080/services/client" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:8080/services/client">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost:8080/services/client" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="registerRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="loginRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accessToken" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="loginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accessToken" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="registerRequest">
+    <wsdl:part element="tns:registerRequest" name="registerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerResponse">
+    <wsdl:part element="tns:registerResponse" name="registerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part element="tns:loginRequest" name="loginRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part element="tns:loginResponse" name="loginResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClientPort">
+    <wsdl:operation name="register">
+      <wsdl:input message="tns:registerRequest" name="registerRequest"></wsdl:input>
+      <wsdl:output message="tns:registerResponse" name="registerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginRequest" name="loginRequest"></wsdl:input>
+      <wsdl:output message="tns:loginResponse" name="loginResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientPortSoap11" type="tns:ClientPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="register">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="registerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="loginRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientPortService">
+    <wsdl:port binding="tns:ClientPortSoap11" name="ClientPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="83849746-1d08-4f74-b99f-6857386a169c" isOneWay="false" action="" name="login" bindingOperationName="login" type="Request-Response" outputName="loginResponse" inputName="loginRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19e37cb9-5023-46c3-9678-d4eea60d9e8b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://localhost:8080/services/client">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:loginRequest>\r
+         <cli:username>admin</cli:username>\r
+         <cli:password>admin</cli:password>\r
+      </cli:loginRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/client/ClientPort/loginRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f39e48e1-e72b-4f7f-91e3-9c0a40b1a152" isOneWay="false" action="" name="register" bindingOperationName="register" type="Request-Response" outputName="registerResponse" inputName="registerRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5d6bb3aa-9b63-4d00-bd9b-a847f03a6899" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://localhost:8080/services/client">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:registerRequest>\r
+         <cli:firstName>Test</cli:firstName>\r
+         <cli:lastName>Testowy</cli:lastName>\r
+         <cli:username>admin2</cli:username>\r
+         <cli:password>admin</cli:password>\r
+      </cli:registerRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/client/ClientPort/registerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b63f4d44-e208-4039-97ee-1b8e3f329133" wsaVersion="NONE" name="RentalPortSoap11" type="wsdl" bindingName="{http://localhost:8080/services/rental}RentalPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/blink/Downloads/rental.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/blink/Downloads/rental.wsdl"><con:part><con:url>file:/C:/Users/blink/Downloads/rental.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://localhost:8080/services/rental" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://localhost:8080/services/rental" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:8080/services/rental">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost:8080/services/rental" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findAllRequest">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="findAllResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="list" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="dto" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:RentalDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RentalDto">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="dateFrom" type="xs:dateTime"/>
+          <xs:element name="dateTo" type="xs:dateTime"/>
+          <xs:element name="car" type="tns:DictionaryDto"/>
+          <xs:element name="user" type="tns:DictionaryDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DictionaryDto">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateResponse">
+    <wsdl:part element="tns:updateResponse" name="updateResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createResponse">
+    <wsdl:part element="tns:createResponse" name="createResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteByIdRequest">
+    <wsdl:part element="tns:deleteByIdRequest" name="deleteByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllResponse">
+    <wsdl:part element="tns:findAllResponse" name="findAllResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequest">
+    <wsdl:part element="tns:createRequest" name="createRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdResponse">
+    <wsdl:part element="tns:findByIdResponse" name="findByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdRequest">
+    <wsdl:part element="tns:findByIdRequest" name="findByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllRequest">
+    <wsdl:part element="tns:findAllRequest" name="findAllRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRequest">
+    <wsdl:part element="tns:updateRequest" name="updateRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RentalPort">
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateRequest" name="updateRequest"></wsdl:input>
+      <wsdl:output message="tns:updateResponse" name="updateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequest" name="createRequest"></wsdl:input>
+      <wsdl:output message="tns:createResponse" name="createResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteById">
+      <wsdl:input message="tns:deleteByIdRequest" name="deleteByIdRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <wsdl:input message="tns:findAllRequest" name="findAllRequest"></wsdl:input>
+      <wsdl:output message="tns:findAllResponse" name="findAllResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <wsdl:input message="tns:findByIdRequest" name="findByIdRequest"></wsdl:input>
+      <wsdl:output message="tns:findByIdResponse" name="findByIdResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RentalPortSoap11" type="tns:RentalPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="update">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="findAllRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="findByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RentalPortService">
+    <wsdl:port binding="tns:RentalPortSoap11" name="RentalPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="2402808b-caf9-429f-8a99-26925657760c" isOneWay="false" action="" name="create" bindingOperationName="create" type="Request-Response" outputName="createResponse" inputName="createRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2ce285e5-4f47-488d-b206-2840a0b79c52" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="http://localhost:8080/services/rental">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ren:createRequest>\r
+         <ren:dto>\r
+            <ren:id>?</ren:id>\r
+            <ren:dateFrom>?</ren:dateFrom>\r
+            <ren:dateTo>?</ren:dateTo>\r
+            <ren:car>\r
+               <ren:id>?</ren:id>\r
+               <ren:name>?</ren:name>\r
+            </ren:car>\r
+            <ren:user>\r
+               <ren:id>?</ren:id>\r
+               <ren:name>?</ren:name>\r
+            </ren:user>\r
+         </ren:dto>\r
+      </ren:createRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/rental/RentalPort/createRequest"/></con:call></con:operation><con:operation id="beed7298-c426-44d9-bdd7-ae64051ec620" isOneWay="false" action="" name="deleteById" bindingOperationName="deleteById" type="One-Way" inputName="deleteByIdRequest" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c11cd05a-e432-467c-a71b-2adfef4bb7ae" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="http://localhost:8080/services/rental">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ren:deleteByIdRequest>\r
+         <ren:id>?</ren:id>\r
+      </ren:deleteByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/rental/RentalPort/deleteByIdRequest"/></con:call></con:operation><con:operation id="1313ccb9-72f5-4cee-b5b4-e6a7eb11235d" isOneWay="false" action="" name="findAll" bindingOperationName="findAll" type="Request-Response" outputName="findAllResponse" inputName="findAllRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3f3fe2c-e340-4794-97e9-3d0ed0bd3a7d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="http://localhost:8080/services/rental">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ren:findAllRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/rental/RentalPort/findAllRequest"/></con:call></con:operation><con:operation id="5cdd3ee2-06b8-483b-8765-c87870fefaaa" isOneWay="false" action="" name="findById" bindingOperationName="findById" type="Request-Response" outputName="findByIdResponse" inputName="findByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="99896234-bd34-48c2-b841-ccb7a93a96cc" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="http://localhost:8080/services/rental">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ren:findByIdRequest>\r
+         <ren:id>?</ren:id>\r
+      </ren:findByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/rental/RentalPort/findByIdRequest"/></con:call></con:operation><con:operation id="5c18cd3c-b8f5-4b77-a8de-e90ca8fed75d" isOneWay="false" action="" name="update" bindingOperationName="update" type="Request-Response" outputName="updateResponse" inputName="updateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d01182cf-9520-4ef8-ae0b-366873d24b28" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="http://localhost:8080/services/rental">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ren:updateRequest>\r
+         <ren:id>?</ren:id>\r
+         <ren:dto>\r
+            <ren:id>?</ren:id>\r
+            <ren:dateFrom>?</ren:dateFrom>\r
+            <ren:dateTo>?</ren:dateTo>\r
+            <ren:car>\r
+               <ren:id>?</ren:id>\r
+               <ren:name>?</ren:name>\r
+            </ren:car>\r
+            <ren:user>\r
+               <ren:id>?</ren:id>\r
+               <ren:name>?</ren:name>\r
+            </ren:user>\r
+         </ren:dto>\r
+      </ren:updateRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/rental/RentalPort/updateRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7031527e-a7cf-421c-ac85-47934bb0ad6d" wsaVersion="NONE" name="CarPortSoap11" type="wsdl" bindingName="{http://localhost:8080/services/car}CarPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/blink/Downloads/car.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/blink/Downloads/car.wsdl"><con:part><con:url>file:/C:/Users/blink/Downloads/car.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://localhost:8080/services/car" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://localhost:8080/services/car" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:8080/services/car">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost:8080/services/car" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findAllRequest">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="findAllResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="list" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="dto" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dto" type="tns:CarDto"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="CarDto">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="model" type="tns:CarModel"/>
+          <xs:element name="transmission" type="tns:Transmission"/>
+          <xs:element name="color" type="xs:string"/>
+          <xs:element name="mileage" type="xs:int"/>
+          <xs:element name="yearOfProduction" type="xs:int"/>
+          <xs:element name="fuel" type="tns:Fuel"/>
+          <xs:element minOccurs="0" name="secondaryFuel" type="tns:Fuel"/>
+          <xs:element name="drive" type="tns:Drive"/>
+          <xs:element name="airConditioning" type="xs:boolean"/>
+          <xs:element name="pricePerHour" type="xs:float"/>
+          <xs:element name="picture" type="xs:base64Binary" xmime:expectedContentTypes="image/jpeg"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CarModel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SEDAN"/>
+          <xs:enumeration value="SUV"/>
+          <xs:enumeration value="HATCHBACK"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Transmission">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MANUAL"/>
+          <xs:enumeration value="AUTOMATIC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Fuel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GAS"/>
+          <xs:enumeration value="DIESEL"/>
+          <xs:enumeration value="LPG"/>
+          <xs:enumeration value="ELECTRIC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Drive">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FWD"/>
+          <xs:enumeration value="RWD"/>
+          <xs:enumeration value="AWD"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateRequest">
+    <wsdl:part element="tns:updateRequest" name="updateRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequest">
+    <wsdl:part element="tns:createRequest" name="createRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdResponse">
+    <wsdl:part element="tns:findByIdResponse" name="findByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdRequest">
+    <wsdl:part element="tns:findByIdRequest" name="findByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllRequest">
+    <wsdl:part element="tns:findAllRequest" name="findAllRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createResponse">
+    <wsdl:part element="tns:createResponse" name="createResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteByIdRequest">
+    <wsdl:part element="tns:deleteByIdRequest" name="deleteByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllResponse">
+    <wsdl:part element="tns:findAllResponse" name="findAllResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateResponse">
+    <wsdl:part element="tns:updateResponse" name="updateResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CarPort">
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateRequest" name="updateRequest"></wsdl:input>
+      <wsdl:output message="tns:updateResponse" name="updateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createRequest" name="createRequest"></wsdl:input>
+      <wsdl:output message="tns:createResponse" name="createResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <wsdl:input message="tns:findByIdRequest" name="findByIdRequest"></wsdl:input>
+      <wsdl:output message="tns:findByIdResponse" name="findByIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <wsdl:input message="tns:findAllRequest" name="findAllRequest"></wsdl:input>
+      <wsdl:output message="tns:findAllResponse" name="findAllResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteById">
+      <wsdl:input message="tns:deleteByIdRequest" name="deleteByIdRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CarPortSoap11" type="tns:CarPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="update">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="findByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="findAllRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarPortService">
+    <wsdl:port binding="tns:CarPortSoap11" name="CarPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="080bc1ba-6a0e-4485-97fc-cd83555ea5cb" isOneWay="false" action="" name="create" bindingOperationName="create" type="Request-Response" outputName="createResponse" inputName="createRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="81e07d60-a4ef-46d6-be68-9ef3b34f103d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MTQ5MzUyNDYsImV4cCI6MTcxNDkzODg0Nn0.vIw_HVB-MBSSG71zncDl_U9BFny4k8kBb54zuosKn4AexgZUd_hpwfNUkSsiIXR_WollBV0ypChTBiBIBJd6SQ" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://localhost:8080/services/car">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:createRequest>\r
+         <car:dto>\r
+            <car:id>?</car:id>\r
+            <car:model>A3</car:model>\r
+            <car:transmission>MANUAL</car:transmission>\r
+            <car:color>SILVER</car:color>\r
+            <car:mileage>396000</car:mileage>\r
+            <car:yearOfProduction>1998</car:yearOfProduction>\r
+            <car:fuel>GAS</car:fuel>\r
+            <!--Optional:-->\r
+            <car:secondaryFuel>LPG</car:secondaryFuel>\r
+            <car:drive>FWD</car:drive>\r
+            <car:airConditioning>1</car:airConditioning>\r
+            <car:pricePerHour>10</car:pricePerHour>\r
+            <car:picture>cid:259228689292</car:picture>\r
+         </car:dto>\r
+      </car:createRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>auda3silver.png</con:name><con:contentType>image/x-png</con:contentType><con:contentId>auda3silver.png</con:contentId><con:part>&lt;anonymous></con:part><con:url>C:/Users/blink/Downloads/auda3silver.png</con:url><con:id>a6d7f2c7-2d46-4b6c-8500-a3800dc5a2b0</con:id></con:attachment><con:attachment><con:name>audia3.jpg</con:name><con:contentType>image/jpeg</con:contentType><con:contentId>audia3.jpg</con:contentId><con:part>259228689292</con:part><con:url>C:/Users/blink/Pictures/audia3.jpg</con:url><con:id>65f9658e-a953-496d-b097-64037cf91efd</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/car/CarPort/createRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0adf538e-1bc7-4485-93af-612f170ea93c" isOneWay="false" action="" name="deleteById" bindingOperationName="deleteById" type="One-Way" inputName="deleteByIdRequest" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="50016388-a460-4148-a54f-6cdacd27e06d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://localhost:8080/services/car">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:deleteByIdRequest>\r
+         <car:id>?</car:id>\r
+      </car:deleteByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/car/CarPort/deleteByIdRequest"/></con:call></con:operation><con:operation id="93fac540-d4c3-4a66-8e54-5094a0781feb" isOneWay="false" action="" name="findAll" bindingOperationName="findAll" type="Request-Response" outputName="findAllResponse" inputName="findAllRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="de9f3f7c-4b0d-4af5-929c-7c29c8923a48" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MTQ5MzUyNDYsImV4cCI6MTcxNDkzODg0Nn0.vIw_HVB-MBSSG71zncDl_U9BFny4k8kBb54zuosKn4AexgZUd_hpwfNUkSsiIXR_WollBV0ypChTBiBIBJd6SQ" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://localhost:8080/services/car">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:findAllRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/car/CarPort/findAllRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a534d05b-13bd-4c93-82fc-4163e4de33c5" isOneWay="false" action="" name="findById" bindingOperationName="findById" type="Request-Response" outputName="findByIdResponse" inputName="findByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="249f7601-de9c-4b94-b8ac-b69be89ee87c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://localhost:8080/services/car">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:findByIdRequest>\r
+         <car:id>?</car:id>\r
+      </car:findByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/car/CarPort/findByIdRequest"/></con:call></con:operation><con:operation id="963fb208-95ba-490f-a339-18b06d321a46" isOneWay="false" action="" name="update" bindingOperationName="update" type="Request-Response" outputName="updateResponse" inputName="updateRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91127215-9866-44b1-a904-cfc2fd3ac0e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://localhost:8080/services/car">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:updateRequest>\r
+         <car:id>?</car:id>\r
+         <car:dto>\r
+            <car:id>?</car:id>\r
+            <car:model>?</car:model>\r
+            <car:transmission>?</car:transmission>\r
+            <car:color>?</car:color>\r
+            <car:mileage>?</car:mileage>\r
+            <car:yearOfProduction>?</car:yearOfProduction>\r
+            <car:fuel>?</car:fuel>\r
+            <!--Optional:-->\r
+            <car:secondaryFuel>?</car:secondaryFuel>\r
+            <car:drive>?</car:drive>\r
+            <car:airConditioning>?</car:airConditioning>\r
+            <car:pricePerHour>?</car:pricePerHour>\r
+            <car:picture>cid:1072352119358</car:picture>\r
+         </car:dto>\r
+      </car:updateRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:8080/services/car/CarPort/updateRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
