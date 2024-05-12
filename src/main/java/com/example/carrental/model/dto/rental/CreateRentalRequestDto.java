@@ -1,6 +1,5 @@
 package com.example.carrental.model.dto.rental;
 
-import com.example.carrental.model.dto.CarDto;
 import com.example.carrental.model.dto.RentalDto;
 import jakarta.xml.bind.annotation.*;
 import lombok.AllArgsConstructor;
@@ -20,6 +19,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateRentalRequestDto implements Serializable {
-    @XmlElement(namespace = "http://localhost:8080/services/rental")
+    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
     private RentalDto dto;
 }

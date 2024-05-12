@@ -5,15 +5,14 @@ import com.example.carrental.model.enums.CarModel;
 import com.example.carrental.model.enums.Drive;
 import com.example.carrental.model.enums.Fuel;
 import com.example.carrental.model.enums.Transmission;
-import jakarta.activation.DataHandler;
-import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.annotation.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.awt.*;
-import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * DTO for {@link Car}
@@ -41,27 +40,27 @@ import java.util.Objects;
 public final class CarDto implements Serializable {
     @XmlElement(namespace = "http://localhost:8080/services/car")
     private Long id;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private CarModel model;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Transmission transmission;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private String color;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Integer mileage;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Integer yearOfProduction;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Fuel fuel;
     @XmlElement(namespace = "http://localhost:8080/services/car")
     private Fuel secondaryFuel;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Drive drive;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Boolean airConditioning;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     private Float pricePerHour;
-    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/car")
     @XmlMimeType("image/*")
     private Image picture;
 }

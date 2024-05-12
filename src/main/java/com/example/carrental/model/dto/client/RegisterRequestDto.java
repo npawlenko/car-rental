@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "registerRequest", namespace = "http://localhost:8080/services/client", propOrder = {
-        "firstName",
-        "lastName",
+        "firstname",
+        "lastname",
         "username",
         "password"
 })
@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "registerRequest", namespace = "http://localhost:8080/services/client")
 public class RegisterRequestDto {
     @XmlElement(namespace = "http://localhost:8080/services/client", required = true)
-    private String firstName;
+    private String firstname;
     @XmlElement(namespace = "http://localhost:8080/services/client", required = true)
-    private String lastName;
+    private String lastname;
     @XmlElement(namespace = "http://localhost:8080/services/client", required = true)
     private String username;
     @XmlElement(namespace = "http://localhost:8080/services/client", required = true)

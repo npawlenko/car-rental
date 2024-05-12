@@ -31,14 +31,14 @@ import java.time.LocalDateTime;
 public final class RentalDto implements Serializable {
     @XmlElement(namespace = "http://localhost:8080/services/rental")
     private Long id;
-    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/rental")
     @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     private LocalDateTime dateFrom;
-    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/rental")
     @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     private LocalDateTime dateTo;
-    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/rental")
     private DictionaryDto car;
-    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
+    @XmlElement(namespace = "http://localhost:8080/services/rental")
     private DictionaryDto user;
 }

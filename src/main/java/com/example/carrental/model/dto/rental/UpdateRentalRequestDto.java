@@ -20,8 +20,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateRentalRequestDto implements Serializable {
-    @XmlElement(namespace = "http://localhost:8080/services/rental")
+    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
     private Long id;
-    @XmlElement(namespace = "http://localhost:8080/services/rental")
+    @XmlElement(namespace = "http://localhost:8080/services/rental", required = true)
     private RentalDto dto;
 }

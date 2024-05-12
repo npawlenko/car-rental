@@ -21,8 +21,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateCarRequestDto implements Serializable {
-    @XmlElement(namespace = "http://localhost:8080/services/car")
+    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
     private Long id;
-    @XmlElement(namespace = "http://localhost:8080/services/car")
+    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
     private CarDto dto;
 }

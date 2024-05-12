@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class FindCarByIdRequestDto {
-    @XmlElement(namespace = "http://localhost:8080/services/car")
+    @XmlElement(namespace = "http://localhost:8080/services/car", required = true)
     private Long id;
 }
