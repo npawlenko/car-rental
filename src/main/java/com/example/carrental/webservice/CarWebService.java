@@ -2,10 +2,7 @@ package com.example.carrental.webservice;
 
 import com.example.carrental.domain.Car;
 import com.example.carrental.model.dto.CarDto;
-import com.example.carrental.model.dto.car.CarListResponseDto;
-import com.example.carrental.model.dto.car.CreateCarRequestDto;
-import com.example.carrental.model.dto.car.FindCarByIdRequestDto;
-import com.example.carrental.model.dto.car.UpdateCarRequestDto;
+import com.example.carrental.model.dto.car.*;
 import com.example.carrental.security.annotation.RequireAdminRole;
 import com.example.carrental.service.CarService;
 import lombok.Getter;
@@ -54,8 +51,7 @@ public class CarWebService extends AbstractCrudWebService<Car, CarDto, Long> {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteByIdRequest")
     @RequireAdminRole
-    @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
+    public void deleteById(@RequestPayload DeleteCarByIdRequestDto deleteCarByIdRequestDto) {
+        super.deleteById(deleteCarByIdRequestDto.getId());
     }
 }
