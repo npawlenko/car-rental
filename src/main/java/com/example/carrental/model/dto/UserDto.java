@@ -19,8 +19,8 @@ import java.util.Set;
 @NoArgsConstructor
 public final class UserDto implements Serializable {
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private @NotNull String username;
     private Set<RoleDto> roles;
 }

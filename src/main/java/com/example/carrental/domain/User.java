@@ -37,10 +37,10 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(name = COL_FIRSTNAME)
-    private String firstName;
+    private String firstname;
 
     @Column(name = COL_LASTNAME)
-    private String lastName;
+    private String lastname;
 
     @Column(name = COL_USERNAME)
     private String username;
@@ -53,7 +53,7 @@ public class User implements UserDetails {
     private Set<Role> roles;
 
     @Transient
-    private final String fullName = firstName + " " + lastName;
+    private final String fullName = firstname + " " + lastname;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
